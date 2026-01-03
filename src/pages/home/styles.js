@@ -1,0 +1,41 @@
+import styled from "styled-components";
+
+export const Container = styled.main`    
+    margin-top: 60px;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    div {
+        margin-top: 40px;
+    }
+`;
+
+export const Title = styled.h2`
+    font-style: normal;
+    font-weight: 700;
+    font-size: 32px;
+    width: 320px;
+    margin-bottom: 20px;
+    line-height: 44px;
+
+    color: #FFFFFF
+`;
+
+export const TitleHighlight = styled.span`
+    color: #E4105d;
+`;
+
+export const TextContent = styled.p`
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    width: 420px;
+    margin-bottom: 20px;
+    line-height: 22px;
+
+    color: #FFFFFF
+`;
