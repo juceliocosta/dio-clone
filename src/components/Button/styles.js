@@ -9,7 +9,7 @@ export const ButtonContainer = styled.button`
     min-width: 120px;
     width: 100%;
 
-    ${({variant}) => variant !== "primary" && css`
+    ${({$variant}) => $variant !== "primary" && css`
         background-color: #e4105d;
         min-width: 168px;
         height: 33px;

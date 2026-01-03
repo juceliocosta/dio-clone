@@ -15,6 +15,7 @@ export const Row = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 10px;
 `;
 
 export const Column = styled.div`
@@ -46,7 +47,7 @@ export const BuscarImputContainer = styled.div`
 
 export const Menu = styled.a`
     font-style: normal;
-    font-size: 12px;
+    font-size: 18px;
     line-height: 25px;    
     color: #FFFFFF;
     margin-left: 12px;
@@ -59,7 +60,7 @@ export const MenuRight = styled.a`
     font-size: 12px;
     line-height: 25px;    
     color: #FFFFFF;
-    margin-left: 12px;
+    margin-right: 12px;
     text-decoration: none;
     cursor: pointer;
 `;
