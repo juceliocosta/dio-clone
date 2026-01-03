@@ -10,7 +10,7 @@ import Feed from "./pages/feed";
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/dio-clone">
      <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
