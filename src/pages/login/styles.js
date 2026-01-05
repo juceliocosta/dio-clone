@@ -54,12 +54,6 @@ export const SubtitleLogin = styled.p`
     line-height: 25px;
 `;
 
-export const FormContainer = styled.form`
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-`;
-
 export const EsqueciText = styled.p`
     font-style: normal;
     font-weight: 700;
