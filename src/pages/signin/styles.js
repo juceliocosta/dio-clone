@@ -22,9 +22,8 @@ export const Column = styled.div`
 export const Row = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
+    justify-content: flex-start;
+    gap: 10px;
 `;
 
 export const Title = styled.h2`
@@ -54,21 +53,19 @@ export const SubtitleLogin = styled.p`
     line-height: 25px;
 `;
 
-export const EsqueciText = styled.p`
-    font-style: normal;
+export const StrongText = styled.strong`
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
 
-    color: #e5e044;
+    color: #ffffff;
 `;
 
-export const CriarText = styled.p`
+export const LoginText = styled.strong`
     font-style: normal;
     font-weight: 700;
     font-size: 14px;
     line-height: 19px;
-
     color: #50C570;
 
     &:hover {

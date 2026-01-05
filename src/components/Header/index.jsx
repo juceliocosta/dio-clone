@@ -16,15 +16,24 @@ import {
 const Header = ({autenticado}) => {
 
   const navigate = useNavigate();
-  
-  const handleClickSignIn = () =>{
+
+  const handleClickHome = () =>{
     navigate('/')
   }
+  
+  const handleClickLogin = () =>{
+    navigate('/login')
+  }
+
+  const handleClickSignIn = () =>{
+    navigate('/signin')
+  }
+
   return (
     <Wrapper>
         <HeaderContainer>
             <Row>
-                <img src={logo} alt="Logo da Dio" onClick={handleClickSignIn} />
+                <img src={logo} alt="Logo da Dio" />
                 {autenticado ? (
                     <>
                         <BuscarImputContainer>
@@ -40,9 +49,9 @@ const Header = ({autenticado}) => {
                     <UserPicture src="https://avatars.githubusercontent.com/u/104917285?v=4" />
                 ) : (
                     <>
-                        <MenuRight href="#">Home</MenuRight>
-                        <Button title="Entrar" />
-                        <Button title="Cadastrar" />
+                        <MenuRight onClick={handleClickHome} >Home</MenuRight>
+                        <Button title="Entrar" onClick={handleClickLogin} />
+                        <Button title="Cadastrar" onClick={handleClickSignIn} />
                     </>
                 )}
             </Row>

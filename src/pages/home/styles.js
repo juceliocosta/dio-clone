@@ -6,7 +6,7 @@ export const Container = styled.main`
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-start;
 
     div {
         margin-top: 40px;
