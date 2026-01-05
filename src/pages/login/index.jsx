@@ -1,4 +1,6 @@
 import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import * as yup from "yup"
 
 import {MdEmail, MdLock} from "react-icons/md"
 import Button from "../../components/Button";
@@ -8,11 +10,26 @@ import Input from "../../components/Input";
 import { Wrapper, Container, Column, Row,  CriarText, EsqueciText, Title, TitleLogin, SubtitleLogin} from "./styles";
 import { useNavigate } from "react-router-dom";
 
+const schema = yup.object({
+  email: yup.string().email('Email não é válido').required('Campo obrigatório'),
+  password: yup.string().min(6, 'No mínimo 6 caracteres').required('Campo obrigatório'),
+}).required();
+
 const Login = () => {
 
     const navigate = useNavigate();
 
-    const { control, handleSubmit, formState: {errors, isValid} } = useForm();
+    const { control, handleSubmit, formState: {errors, isValid} } = useForm({
+      resolver: yupResolver(schema),
+      mode: 'onChange',
+      defaultValues: {
+        email: '',
+        password: ''
+      }
+    });
+
+    console.log(isValid, errors);
+
     const onSubmit = (data) => console.log(data);
 
     const handleClickSignIn = () =>{
@@ -33,8 +50,8 @@ const Login = () => {
             <TitleLogin>Faça seu cadastro</TitleLogin>
             <SubtitleLogin>Faça seu login e make the change</SubtitleLogin>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <Input name="email" control={control} placeholder="E-mail" type="email" leftIcon={<MdEmail />} />
-              <Input name="password" control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
+              <Input name="email" errorMessage={errors?.email?.message} control={control} placeholder="E-mail" type="email" leftIcon={<MdEmail />} />
+              <Input name="password"  errorMessage={errors?.password?.message} control={control} placeholder="Senha" type="password" leftIcon={<MdLock />} />
               <Button title="Entrar" $variant="secondary" type="submit" />
             </form>
             <Row>
