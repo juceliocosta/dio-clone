@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const IconContainer = styled.div`
+export const InputContainer = styled.div`
     width: 100%;
     max-width: 275px;
     height: 30px;
@@ -11,7 +11,7 @@ export const IconContainer = styled.div`
     margin-bottom: 20px;
 `;
 
-export const InputContainer = styled.div`
+export const IconContainer = styled.div`
     margin-right: 10px;
 `;
 
