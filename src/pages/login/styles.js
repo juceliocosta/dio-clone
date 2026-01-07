@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.main`    
     margin-top: 60px;
-    
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
@@ -16,7 +15,7 @@ export const Wrapper = styled.div`
 export const Column = styled.div`
     display: flex;
     flex-direction: column;
-    margin-top: 40px;
+    margin: 40px 10px;
 `;
 
 export const Row = styled.div`
@@ -31,7 +30,7 @@ export const Title = styled.h2`
     font-style: normal;
     font-weight: 700;
     font-size: 32px;
-    width: 320px;
+    max-width: 320px;
     margin-bottom: 20px;
     line-height: 44px;
 
