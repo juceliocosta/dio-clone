@@ -38,7 +38,7 @@ export const BuscarImputContainer = styled.div`
     height: 30px;
     background-color: #2d2d37;
     border-radius: 8px;
-    padding: 2px 5px;
+    padding: 0px 5px;
     margin: 0px 12px;
 
     display: flex;
@@ -81,7 +81,8 @@ export const Input  = styled.input`
     flex: 1;
     border: 0;
     color: #FFFFFF;
-
+    border-radius: 8px;
+    padding: 2px 5px;
 `;
 
 

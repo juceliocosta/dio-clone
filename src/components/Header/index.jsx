@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import logo from "../../assets/logo-dio.png";
 import Button from "../Button";
+import BurgerMenu from "../BurgerMenu";
 
 import {
     BuscarImputContainer,
@@ -13,7 +14,22 @@ import {
     Wrapper
 } from "./styles";
 
+import { useState, useEffect } from "react";
+
 const Header = ({autenticado}) => {
+  function useIsMobile () {
+    const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
+
+    useEffect(() => {
+      const resize = () => setIsMobile(window.innerWidth <= 600);
+
+      window.addEventListener("resize", resize);
+      return () => window.removeEventListener("resize", resize);
+    }, []);
+
+    return isMobile;
+  }
+  const isMobile = useIsMobile();
 
   const navigate = useNavigate();
 
@@ -34,26 +50,45 @@ const Header = ({autenticado}) => {
         <HeaderContainer>
             <Row>
                 <img src={logo} alt="Logo da Dio" />
-                {autenticado ? (
+                {autenticado && !isMobile &&
                     <>
                         <BuscarImputContainer>
                             <Input type="text" placeholder="Buscar..." />
-                        </BuscarImputContainer>
+                        </BuscarImputContainer>                                
                         <Menu>Live Code</Menu>
                         <Menu>Global</Menu>
                     </>
-                ) : null}
+                }
             </Row>
             <Row>
-                {autenticado ? (
+                {autenticado ? (<>
                     <UserPicture src="https://avatars.githubusercontent.com/u/104917285?v=4" />
-                ) : (
-                    <>
-                        <MenuRight onClick={handleClickHome} >Home</MenuRight>
-                        <Button title="Entrar" onClick={handleClickLogin} />
-                        <Button title="Cadastrar" onClick={handleClickSignIn} />
-                    </>
-                )}
+                    {isMobile && (
+                        <BurgerMenu>
+                            <BuscarImputContainer>
+                                <Input type="text" placeholder="Buscar..." />
+                            </BuscarImputContainer>                                
+                            <Menu>Live Code</Menu>
+                            <Menu>Global</Menu>
+                        </BurgerMenu>
+                    )}                    
+                </>
+                ) : (<>
+                        {isMobile ?
+                            <BurgerMenu>
+                                <MenuRight onClick={handleClickHome} >Home</MenuRight>
+                                <MenuRight onClick={handleClickLogin} >Entrar</MenuRight>
+                                <MenuRight onClick={handleClickSignIn} >Cadastrar</MenuRight>
+                            </BurgerMenu>
+                        :
+                            <>
+                                <MenuRight onClick={handleClickHome} >Home</MenuRight>
+                                <Button title="Entrar" onClick={handleClickLogin} />
+                                <Button title="Cadastrar" onClick={handleClickSignIn} />
+                            </>
+                        }
+                    </>)
+                }
             </Row>
         </HeaderContainer>
     </Wrapper>
