@@ -1,6 +1,7 @@
-import { slide as MenuBar } from 'react-burger-menu'
+import { slide as MenuBar } from 'react-burger-menu';
+import { IBurgerMenu } from './types';
 
-const BurgerMenu = ({children}) => {
+const BurgerMenu = ({children}: IBurgerMenu) => {
   return (
     <MenuBar right styles={styles}>{children}</MenuBar>
   )

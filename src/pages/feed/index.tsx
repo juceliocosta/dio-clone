@@ -18,11 +18,11 @@ const Feed = () => {
         </Column>
         <Column $flex={1} $shrink={0}>
           <TitleHighlight># RANK TOP 5 DA SEMANA</TitleHighlight>
-          <UserInfo percentual={95} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
-          <UserInfo percentual={76} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
-          <UserInfo percentual={53} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
-          <UserInfo percentual={50} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
-          <UserInfo percentual={15} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
+          <UserInfo $percentual={95} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
+          <UserInfo $percentual={76} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
+          <UserInfo $percentual={53} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
+          <UserInfo $percentual={50} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
+          <UserInfo $percentual={15} nome="Jucélio Costa" image="https://avatars.githubusercontent.com/u/104917285?v=4" />
         </Column>
       </Container>
     </>
