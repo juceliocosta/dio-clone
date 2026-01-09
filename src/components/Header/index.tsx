@@ -15,8 +15,9 @@ import {
 } from "./styles";
 
 import { useState, useEffect } from "react";
+import { IHeader } from "./types";
 
-const Header = ({autenticado}) => {
+const Header = ({autenticado}: IHeader) => {
   function useIsMobile () {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 600);
 
